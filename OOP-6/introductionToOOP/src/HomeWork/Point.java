@@ -37,7 +37,7 @@ public class Point {
 }
 class distAB{
     public static void main(String[] args) {
-        String seporate = "==================================================";
+        String seporate = "====================================================";
         Scanner input = new Scanner(System.in);
         System.out.println("Введите координаты двух точек A и B :");
         System.out.print("Введите А по x: ");
