@@ -57,10 +57,10 @@ class distAB{
         System.out.println(seporate);
 //==========================================
         double disX = Ax - Bx;
-        double disB = Ay - By;
+        double disY = Ay - By;
 
-        System.out.println("Расстояние между точкой А:%.2f:%.2f и точкой B:%.2f:%.2f = %.2f "
-                .formatted(dis.getAx(),dis.getAy(),dis.getBx(),dis.getBy(),Math.sqrt(disX*disX+disB*disB)));
+        System.out.println("Расстояние между точкой А:%.2f:%.2f и точкой B:%.2f:%.2f = %.3f "
+                .formatted(dis.getAx(),dis.getAy(),dis.getBx(),dis.getBy(),Math.sqrt(disX*disX+disY*disY)));
         System.out.println(seporate);
     }
 }
