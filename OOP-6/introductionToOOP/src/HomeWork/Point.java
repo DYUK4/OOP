@@ -33,7 +33,6 @@ public class Point {
     public void setBy(double By) {
         this.By = By;
     }
-
 }
 class distAB{
     public static void main(String[] args) {
