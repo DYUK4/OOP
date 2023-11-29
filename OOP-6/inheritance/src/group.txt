@@ -1,0 +1,5 @@
+Student:	Pinlman, Jessie, 25, Chemistry, WW_22, 90.0, 95.0;
+Teacher:	Pinl, Jes, 25, Chemistry, 50;
+Graduate:	Shreder, Hank, 40, Criminalistik, OBN, 50.0, 70.0, How;
+Specialist:	Versetti, Tommy, 30, Theft, Vice, 98.0, 99.0, Get money back, 5;
+Teacher:	Diaz, Ricardo, 50, Weapons disrtibution, 250;

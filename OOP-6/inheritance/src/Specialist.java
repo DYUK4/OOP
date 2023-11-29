@@ -1,20 +1,48 @@
 
-public class Specialist extends Student {
-        private String diplom;
 
-    public String getDiplom() {return diplom;}
-    public void setDiplom(String diplom) {this.diplom = diplom;}
+public class Specialist extends Graduate
+{
+    private int grade;
 
-    public Specialist(String lastName, String firstName, int age,
-                      String speciality, String group, double rating, double attendance,
-                      String diplom)
-    {
-        super(lastName, firstName, age, speciality, group, rating, attendance);
-        setDiplom(diplom);
+    public int getGrade() {
+        return grade;
     }
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
+/////////////////////////////////////////////////////////////////////////////////////////////
+    public Specialist(String lastName, String firstName, int age,
+            String speciality, String group, double rating, double attendance,
+            String subject,
+            int grade)
+    {
+        super(lastName, firstName, age, speciality, group, rating, attendance, subject);
+        this.grade = grade;
+        System.out.println("SpecialistConstructor:\t" + Integer.toHexString(hashCode()));
+    }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public Specialist(Graduate graduate, int grade)
+    {
+        super(graduate);
+        this.grade = grade;
+        System.out.println("SpConstructor:\t" + Integer.toHexString(hashCode()));
+    }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public Specialist(Specialist other)
+    {
+        super(other);
+        this.grade = other.grade;
+        System.out.println("SpecialistCopyConstructor:\t" + Integer.toHexString(hashCode()));
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    @Override
+    public void init(String[] values) {
+        super.init(values);
+        grade = Integer.parseInt(values[9]);
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public String toString() {
-        return super.toString()+" "+diplom;
+        return super.toString() + ", " + grade;
     }
-
 }

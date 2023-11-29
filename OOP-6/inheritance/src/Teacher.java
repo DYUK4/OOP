@@ -1,22 +1,37 @@
-public class Teacher extends Human {
-
+public class Teacher extends Human
+{
     private String speciality;
-    private int experientce;
+    private int experience;
 
-    public void setSpeciality(String speciality) {this.speciality = speciality;}
-    public String getSpeciality() {return speciality;}
-
-    public void setExperientce(int experientce) {this.experientce = experientce;}
-    public int getExperientce() {return experientce;}
-
-    public Teacher(String lastName, String firstName, int age, String speciality, int experientce) {
+    public String getSpeciality() {
+        return speciality;
+    }
+    public int getExperience() {
+        return experience;
+    }
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
+    }
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public Teacher(String lastName, String firstName, int age, String speciality, int experience) {
         super(lastName, firstName, age);
         setSpeciality(speciality);
-        setExperientce(experientce);
-        System.out.println("TConstructor Teacher:\t"+Integer.toHexString(hashCode()));
+        setExperience(experience);
+        System.out.println("TeacherConstructor:\t" + Integer.toHexString(hashCode()));
     }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    @Override
+    public void init(String[] values) {
+        super.init(values);
+        speciality = values[4];
+        experience = Integer.parseInt(values[5]);
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public String toString() {
-        return super.toString() +" "+speciality+" "+experientce;
+        return super.toString() + ", " + speciality + ", " + experience;
     }
 }

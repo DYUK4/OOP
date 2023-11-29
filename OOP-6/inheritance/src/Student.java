@@ -1,5 +1,5 @@
-
-public class Student extends Human {
+public class Student extends Human
+{
     private String speciality;
     private String group;
     private double rating;
@@ -8,51 +8,68 @@ public class Student extends Human {
     public String getSpeciality() {
         return speciality;
     }
-    public void setSpeciality(String speciality) {
-        this.speciality = speciality;
-    }
-
     public String getGroup() {
         return group;
+    }
+    public double getRating() {
+        return rating;
+    }
+    public double getAttendance() {
+        return attendance;
+    }
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
     }
     public void setGroup(String group) {
         this.group = group;
     }
-
-    public double getRating() {
-        return rating;
-    }
     public void setRating(double rating) {
         this.rating = rating;
-    }
-
-    public double getAttendance() {
-        return attendance;
     }
     public void setAttendance(double attendance) {
         this.attendance = attendance;
     }
-
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public Student(String lastName, String firstName, int age, String speciality, String group, double rating, double attendance) {
         super(lastName, firstName, age);
         setSpeciality(speciality);
         setGroup(group);
         setRating(rating);
         setAttendance(attendance);
-        System.out.println("SConstructor Student:\t"+Integer.toHexString(hashCode()));
+        System.out.println("StudentConstructor:\t" + Integer.toHexString(hashCode()));
     }
-    public Student(Human human,String speciality,String group,double rating,double attendance){
+    public Student(Human human, String speciality, String group, double rating, double attendance)
+    {
         super(human);
         setSpeciality(speciality);
         setGroup(group);
         setRating(rating);
         setAttendance(attendance);
-        System.out.println("SConstructor Student2:\t"+Integer.toHexString(hashCode()));
+        System.out.println("StudentConstructor:\t" + Integer.toHexString(hashCode()));
     }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public Student(Student other)
+    {
+        super(other);
+        this.speciality = other.speciality;
+        this.group = other.group;
+        this.rating = other.rating;
+        this.attendance = other.attendance;
+        System.out.println("StudentCopyConstructor:\t" + Integer.toHexString(hashCode()));
+    }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
-    public String toString() {
-        return super.toString() +" "+speciality+" "+group+" "+rating+" "+attendance;
+    public void init(String[] values) {
+        super.init(values);
+        speciality = values[4];
+        group = values[5];
+        rating = Double.parseDouble(values[6]);
+        attendance = Double.parseDouble(values[7]);
+    }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    @Override
+    public String toString()
+    {
+        return super.toString() + ", " + speciality + ", " + group + ", " + rating + ", " + attendance;
     }
 }
